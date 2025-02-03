@@ -132,16 +132,17 @@ def train(
         {"Train/total_loss": epoch_loss, "Val/total_loss": val_epoch_loss},
     )
 
+root_data_path = '../Football-Detection-Dataset-8'
 @dataclass
 class DatasetPaths:
-    train_image_dir: str = r"D:\Work\work\FasterRCNN-Torchvision-FineTuning\dataset\AquariumDataset\train\images"
-    val_image_dir: str = r"D:\Work\work\FasterRCNN-Torchvision-FineTuning\dataset\AquariumDataset\valid\images"
-    train_coco_json: str = r"D:\Work\work\FasterRCNN-Torchvision-FineTuning\dataset\AquariumDataset\train\_annotations.coco_neg.json"
-    val_coco_json: str = r"D:\Work\work\FasterRCNN-Torchvision-FineTuning\dataset\AquariumDataset\valid\_annotations.coco.json"
+    train_image_dir: str = f"{root_data_path}/train"
+    val_image_dir: str = f"{root_data_path}/valid"
+    train_coco_json: str = f"{root_data_path}/train/annotations.coco.json"
+    val_coco_json: str = f"{root_data_path}/valid/annotations.coco.json"
 
 @dataclass
 class TrainingConfig:
-    epochs: int = 15
+    epochs: int = 30
     batch_size: int = 6
     val_eval_freq: int = 2
     exp_folder: str = 'exp'
