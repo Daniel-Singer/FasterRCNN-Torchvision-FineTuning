@@ -132,13 +132,13 @@ def train(
         {"Train/total_loss": epoch_loss, "Val/total_loss": val_epoch_loss},
     )
 
-root_data_path = '../Football-Player-Detection-8'
+root_data_path = 'Football-Player-Detection-8'
 @dataclass
 class DatasetPaths:
     train_image_dir: str = f"{root_data_path}/train"
     val_image_dir: str = f"{root_data_path}/valid"
-    train_coco_json: str = f"{root_data_path}/train/annotations.coco.json"
-    val_coco_json: str = f"{root_data_path}/valid/annotations.coco.json"
+    train_coco_json: str = f"{root_data_path}/train/_annotations.coco.json"
+    val_coco_json: str = f"{root_data_path}/valid/_annotations.coco.json"
 
 @dataclass
 class TrainingConfig:
